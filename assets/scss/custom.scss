@@ -1,0 +1,197 @@
+/* ============================================
+   anh's diary - Custom Theme Styles
+   Inspired by rawley2025.xyz warm aesthetic
+   ============================================ */
+
+/* === Chinese Fonts === */
+@font-face {
+    font-family: "SourceHanSerif";
+    src: url("https://cdn.jsdelivr.net/gh/adobe-fonts/source-han-serif@release/SubsetOTF/SC/SourceHanSerifSC-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SourceHanSerif";
+    src: url("https://cdn.jsdelivr.net/gh/adobe-fonts/source-han-serif@release/SubsetOTF/SC/SourceHanSerifSC-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* === Color Palette Overrides === */
+:root {
+    /* Warm light background */
+    --body-background: #fef9f2;
+
+    /* Accent colors - warm orange-brown */
+    --accent-color: #c4875d;
+    --accent-color-darker: #a06e48;
+    --accent-color-text: #fff;
+
+    /* Body text */
+    --body-text-color: #5a4e41;
+
+    /* Card */
+    --card-background: #fff;
+    --card-background-selected: #fdf0e5;
+    --card-text-color-main: #3d3226;
+    --card-text-color-secondary: #8b7b6b;
+    --card-text-color-tertiary: #a89880;
+    --card-separator-color: rgba(180, 160, 140, 0.25);
+    --card-border-radius: 12px;
+    --card-padding: 24px;
+
+    /* Shadows - warmer */
+    --shadow-l1: 0px 4px 8px rgba(180, 140, 100, 0.06), 0px 0px 2px rgba(160, 120, 80, 0.04);
+    --shadow-l2: 0px 8px 24px rgba(180, 140, 100, 0.08), 0px 2px 6px rgba(160, 120, 80, 0.04);
+    --shadow-l3: 0px 12px 28px rgba(180, 140, 100, 0.10), 0px 2px 8px rgba(160, 120, 80, 0.05);
+    --shadow-l4: 0px 20px 36px rgba(180, 140, 100, 0.10), 0px 4px 12px rgba(160, 120, 80, 0.05);
+
+    /* Link colors */
+    --link-background-color: 196, 135, 93;
+    --link-background-opacity: 0.15;
+    --link-background-opacity-hover: 0.25;
+
+    /* Pre/code */
+    --pre-background-color: #faf8f5;
+    --pre-text-color: #3d3226;
+    --code-background-color: rgba(180, 140, 100, 0.12);
+    --code-text-color: #8b7b6b;
+
+    /* Misc */
+    --blockquote-background-color: #fdf6ef;
+    --table-border-color: #e8d5c0;
+    --tr-even-background-color: #fdf6ef;
+    --section-separation: 30px;
+    --main-top-padding: 40px;
+
+    /* Tags */
+    --tag-border-radius: 6px;
+}
+
+/* === Dark Mode - Warm Dark === */
+:root[data-scheme="dark"] {
+    --body-background: #1e1b18;
+    --accent-color: #e8b88a;
+    --accent-color-darker: #d4a070;
+    --accent-color-text: #1e1b18;
+    --body-text-color: rgba(230, 220, 210, 0.7);
+
+    --card-background: #2a2520;
+    --card-background-selected: rgba(232, 184, 138, 0.12);
+    --card-text-color-main: rgba(240, 230, 220, 0.9);
+    --card-text-color-secondary: rgba(230, 220, 210, 0.65);
+    --card-text-color-tertiary: rgba(210, 195, 180, 0.45);
+    --card-separator-color: rgba(255, 255, 255, 0.08);
+
+    --pre-background-color: #2a2520;
+    --pre-text-color: rgba(240, 230, 220, 0.85);
+    --code-background-color: #2a2520;
+    --code-text-color: rgba(240, 230, 220, 0.85);
+    --blockquote-background-color: #2a2520;
+    --table-border-color: #3d3830;
+    --tr-even-background-color: #2a2520;
+}
+
+[data-scheme="light"] {
+    --pre-text-color: #3d3226;
+    --pre-background-color: #faf8f5;
+}
+
+[data-scheme="dark"] {
+    --pre-text-color: rgba(240, 230, 220, 0.85);
+    --pre-background-color: #2a2520;
+}
+
+/* === Font Family === */
+:root {
+    --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
+    --base-font-family: "Nunito", "SourceHanSerif", "Noto Serif SC", var(--sys-font-family), sans-serif;
+    --code-font-family: "JetBrains Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+    --article-font-family: var(--base-font-family);
+}
+
+/* === Sidebar Tweaks === */
+.site-name {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+}
+
+.site-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+/* === Article Card Tweaks === */
+.article-list--tile .article-details {
+    padding: 20px;
+}
+
+.article-title {
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.article-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--card-text-color-secondary);
+    margin-top: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* === Tag Badges === */
+.article-tags .tag {
+    background: rgba(196, 135, 93, 0.08);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.article-tags .tag:hover {
+    background: rgba(196, 135, 93, 0.18);
+}
+
+/* === Code blocks === */
+pre {
+    border-radius: 8px;
+}
+
+code {
+    border-radius: 4px;
+}
+
+/* === Scrollbar === */
+:root {
+    --scrollbar-thumb: hsl(30, 20%, 82%);
+    --scrollbar-track: var(--body-background);
+}
+
+:root[data-scheme="dark"] {
+    --scrollbar-thumb: hsl(30, 10%, 32%);
+    --scrollbar-track: var(--body-background);
+}
+
+/* === Smooth Transitions === */
+.card, .article-tags .tag, a {
+    transition: all 0.25s ease;
+}
+
+/* === Homepage Layout Spacing === */
+.article-list {
+    gap: 28px;
+}
+
+/* === Footer === */
+.site-footer {
+    opacity: 0.6;
+    font-size: 0.85rem;
+}
